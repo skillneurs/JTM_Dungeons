@@ -11,8 +11,8 @@ body{
     margin: 0;
 }
 main{
-    height: 50vw;
-    background-image: url(../Img/bg2.webp);
+    
+   
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -38,13 +38,13 @@ h1{
     object-fit: cover;
     margin:0;
    }
+   /*menu header*/
 #menu {
-    width: 40px; 
-    height: 40px;
+  
     cursor: pointer; 
     filter: invert(1); 
-    padding-right: 1rem;
-    width: 5%;
+    padding-right: 2rem;
+    width: 4%;
     height: 5%;
     object-fit: cover;
 }
@@ -57,7 +57,7 @@ h1{
     border-radius: 5px;
     padding: 10px;
 }
-/*btn*/
+/*btn start*/
 #sectionstart{
     padding: 20rem;
     display: flex;
@@ -104,12 +104,29 @@ h2{
     gap: 10rem;
     padding: 10rem;
     padding-top: 20rem;
-
+    background-image: url(../Img/bg2.webp);
+    background-position: center;
+    background-size: cover;
+    height: 30vw;
+    background-repeat: no-repeat;
+}
+#nous{
+    display: flex;
+    gap: 10rem;
+    padding: 10rem;
+    padding-top: 20rem;
+    background-image: url(../Img/image_biblio.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 30vw;
 }
 .info2{
     color: white;
     text-align: center;
     text-shadow: 2px 2px 3px rgba(11,5,3,0.5);
+    width: 50%;
+    margin: auto;
+    
 }
 .infoh2{
     font-size: 48px;
@@ -123,29 +140,34 @@ h2{
     background: linear-gradient(to bottom, #0e0e0e, #313534);
     color: transparent;
 }
+#flou2{
+    background: linear-gradient(to bottom, #0e0e0e, #433c27);
+    color: transparent;
+}
 /*footer*/
-footer {
-    height: 10vh;
+footer{
     background-color: #0e0e0e;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    
+    padding: 2rem;
 }
 #linkedinProfil{
     display: flex;
     justify-content: space-around;
-    gap:24rem;
+    gap:20rem;
+    width: 80%;
+    margin: auto;
     
 }
 .linkedina{
     padding: 1rem;
     background-color: rgb(213, 209, 203);
+ 
     border-radius: 1rem;
     text-decoration: none;
     color: black;
+    text-align: center;
 }
 .linkedina:hover{
     background-color: #a2d0cc;
 }
+
+
