@@ -1,0 +1,22 @@
+#popup{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    margin:2rem auto;
+    border-radius: 25px;
+    box-shadow: -1px 1px 10px 0px rgba(0, 0, 0, 0.75);
+    padding: 1rem;
+
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.none{
+    display: none;
+}
