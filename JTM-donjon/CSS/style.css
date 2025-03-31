@@ -127,10 +127,10 @@ h2{
 }
 /*footer*/
 footer {
-    background-color: #0e0e0e;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url(../Img/image_biblio.webp);
 }
 #linkedinProfil{
     display: flex;

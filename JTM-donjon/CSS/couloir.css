@@ -24,9 +24,12 @@ body {
 }
 
 .porte.droite {
-    border-top-right-radius: 150 px;
+    border-top-right-radius: 90px;
     left: 50%;
     transform-origin: right;
+}
+.porte.gauche {
+    border-top-left-radius: 90px;
 }
 
 .porte-container:hover .gauche {
