@@ -1,0 +1,151 @@
+#hero{
+    height: 100vh;
+    background-image: url(../Img/BGjtm.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+}
+body{
+    padding: 0;
+    margin: 0;
+}
+main{
+    height: 50vw;
+    background-image: url(../Img/bg2.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: none;
+}
+
+/*header*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8); 
+    position: fixed; 
+    width: 100vw;
+    padding: 0px;
+    z-index: 100;
+}
+h1{
+    color: rgb(237, 237, 215);
+}
+#logo{
+    width: 77px;
+    object-fit: cover;
+    margin:0;
+   }
+#menu {
+    width: 40px; 
+    height: 40px;
+    cursor: pointer; 
+    filter: invert(1); 
+    padding-right: 1rem;
+    width: 5%;
+    height: 5%;
+    object-fit: cover;
+}
+.menuItem {
+    display: none; 
+    position: absolute;
+    right: 20px;
+    top: 60px;
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 5px;
+    padding: 10px;
+}
+/*btn*/
+#sectionstart{
+    padding: 20rem;
+    display: flex;
+    justify-content: center;
+   
+}
+@keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2); 
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+#start{
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    border-radius: 1rem;
+    background-color: #746f6fa5;
+    border: 5px black;
+    font-size: 30px;
+    color: white;
+    text-shadow: 2px 2px 3px rgba(11, 5, 3, 0.681);
+    text-decoration: none;
+
+    transition: 0.3s ease;
+    animation: pulse 1.5s infinite; 
+}
+#start:hover{
+    cursor: pointer;
+    background-color: #989090a5;
+}
+/*text main*/
+h2{
+    margin: 0;
+}
+#info{
+    display: flex;
+    gap: 10rem;
+    padding: 10rem;
+    padding-top: 20rem;
+
+}
+.info2{
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 3px rgba(11,5,3,0.5);
+}
+.infoh2{
+    font-size: 48px;
+}
+.infop{
+    font-size: 20px;
+    
+}
+/*section cut hero/main */
+#flou{
+    background: linear-gradient(to bottom, #0e0e0e, #313534);
+    color: transparent;
+}
+/*footer*/
+footer {
+    height: 10vh;
+    background-color: #0e0e0e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+#linkedinProfil{
+    display: flex;
+    justify-content: space-around;
+    gap:24rem;
+    
+}
+.linkedina{
+    padding: 1rem;
+    background-color: rgb(213, 209, 203);
+    border-radius: 1rem;
+    text-decoration: none;
+    color: black;
+}
+.linkedina:hover{
+    background-color: #a2d0cc;
+}
