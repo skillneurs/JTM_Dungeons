@@ -130,7 +130,6 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(../Img/image_biblio.webp);
 }
 #linkedinProfil{
     display: flex;
@@ -143,6 +142,7 @@ footer {
 .linkedina{
     padding: 1rem;
     background-color: rgb(213, 209, 203);
+ 
     border-radius: 1rem;
     text-decoration: none;
     color: black;
@@ -151,9 +151,15 @@ footer {
 .linkedina:hover{
     background-color: #a2d0cc;
 }
-.info_footer{
+.info_nous{
     display: flex;
     flex-direction: column;
-    margin-top: 6rem;
     margin-bottom: 2rem;
+}
+#nous{
+    height: 100vh;
+    background-image: url(../Img/image_biblio.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
