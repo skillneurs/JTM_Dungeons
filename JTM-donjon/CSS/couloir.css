@@ -1,0 +1,37 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #222;
+}
+
+.porte-container {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    perspective: 1000px;
+}
+
+.porte {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: brown;
+    border: 2px solid #442;
+    transition: transform 0.5s ease-in-out;
+    transform-origin: left;
+}
+
+.porte.droite {
+    left: 50%;
+    transform-origin: right;
+}
+
+.porte-container:hover .gauche {
+    transform: rotateY(-70deg);
+}
+
+.porte-container:hover .droite {
+    transform: rotateY(70deg);
+}

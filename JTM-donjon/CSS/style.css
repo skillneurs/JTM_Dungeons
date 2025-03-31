@@ -110,6 +110,8 @@ h2{
     color: white;
     text-align: center;
     text-shadow: 2px 2px 3px rgba(11,5,3,0.5);
+    width: 50%;
+    margin: auto;
 }
 .infoh2{
     font-size: 48px;
@@ -125,19 +127,18 @@ h2{
 }
 /*footer*/
 footer {
-    height: 10vh;
     background-color: #0e0e0e;
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    
 }
 #linkedinProfil{
     display: flex;
     justify-content: space-around;
-    gap:24rem;
-    
+    gap:20rem;
+    width: 80%;
+    margin: auto;
+    padding-top: 6rem;
 }
 .linkedina{
     padding: 1rem;
@@ -145,7 +146,14 @@ footer {
     border-radius: 1rem;
     text-decoration: none;
     color: black;
+    text-align: center;
 }
 .linkedina:hover{
     background-color: #a2d0cc;
+}
+.info_footer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 6rem;
+    margin-bottom: 2rem;
 }
