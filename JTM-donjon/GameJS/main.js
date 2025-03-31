@@ -1,7 +1,10 @@
 import { createScene } from './scene.js';
 import './PointerLock.js'; // Import de la fonction createScene
+const start = document.querySelector('#closePopup')
 
-window.addEventListener("DOMContentLoaded", function () {
+
+
+start.addEventListener("click", function () {
     var canvas = document.getElementById("renderCanvas");
     var engine = new BABYLON.Engine(canvas, true);
 
