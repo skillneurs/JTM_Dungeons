@@ -1,5 +1,5 @@
 import { createScene } from './scene.js';
-import './PointerLock.js'; // Import de la fonction createScene
+import './PointerLock.js'; 
 const start = document.querySelector('#closePopup')
 
 
