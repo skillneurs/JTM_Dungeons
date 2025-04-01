@@ -54,3 +54,8 @@ body {
 .bg{
     background-color: black;
 }
+.numporte{
+    font-size: 5rem;
+    color: rgba(191, 79, 79, 0.578);
+    text-align: center;
+}
