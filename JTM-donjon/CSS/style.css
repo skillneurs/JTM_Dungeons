@@ -5,6 +5,7 @@
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
+    display: flex;
 }
 body{
     padding: 0;
@@ -59,10 +60,9 @@ h1{
 }
 /*btn start*/
 #sectionstart{
-    padding: 20rem;
     display: flex;
     justify-content: center;
-   
+    margin: auto;
 }
 @keyframes pulse {
     0% {
@@ -156,8 +156,7 @@ footer{
 #linkedinProfil{
     display: flex;
     justify-content: space-around;
-    gap:20rem;
-    width: 80%;
+    width: 90%;
     margin: auto;
     
 }
