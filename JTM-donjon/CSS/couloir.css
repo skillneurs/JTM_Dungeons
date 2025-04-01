@@ -3,13 +3,14 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #222;
+    background-image: url(../Img/pierre.jpg);
+    gap: 25rem;
 }
 
 .porte-container {
     position: relative;
-    width: 200px;
-    height: 300px;
+    width: 300px;
+    height: 450px;
     perspective: 1000px;
 }
 
@@ -18,29 +19,30 @@ body {
     width: 50%;
     height: 100%;
     background: rgb(236, 236, 236);
-  
     border: 2px solid rgb(0, 0, 0);
     transition: transform 0.5s ease-in-out;
     transform-origin: left;
 }
 
 .porte.droite {
-    border-top-right-radius: 90px;
+    border-top-right-radius: 160px;
     left: 50%;
     transform-origin: right;
     background-image: url(../Img/porte.webp);
     background-position: left;
 }
 .porte.gauche {
-    border-top-left-radius: 90px;
+    border-top-left-radius: 160px;
     background-image: url(../Img/porte.webp);
     background-position: right;
 }
 
 .porte-container:hover .gauche {
     transform: rotateY(-70deg);
+  
 }
 
 .porte-container:hover .droite {
     transform: rotateY(70deg);
+    
 }
