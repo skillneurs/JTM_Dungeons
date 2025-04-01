@@ -36,3 +36,16 @@ main{
 body{
     overflow: hidden;
 }
+
+#crosshair {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: red; /* Couleur du viseur */
+    border-radius: 50%; /* Rond */
+    transform: translate(-50%, -50%);
+    pointer-events: none; /* Empêche les interactions avec le viseur */
+    display: none; /* Caché par défaut */
+}
