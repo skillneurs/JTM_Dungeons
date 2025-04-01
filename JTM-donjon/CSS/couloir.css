@@ -2,9 +2,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-image: url(../Img/pierre.jpg);
+    height: 103vh;
+    background-image: url(../Img/bgcouloir.png);
     gap: 25rem;
+    overflow: hidden;
 }
 
 .porte-container {
@@ -12,6 +13,10 @@ body {
     width: 300px;
     height: 450px;
     perspective: 1000px;
+    background-color: black;
+    border-radius: 15px;
+    border-top-right-radius: 160px;
+    border-top-left-radius: 160px;
 }
 
 .porte {
@@ -45,4 +50,7 @@ body {
 .porte-container:hover .droite {
     transform: rotateY(70deg);
     
+}
+.bg{
+    background-color: black;
 }
