@@ -1,11 +1,12 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 103vh;
-    background-image: url(../Img/bgcouloir.png);
-    gap: 25rem;
-    overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 75vh;
+        background-image: url(../Img/bgcouloir.png);
+        background-position: center;
+        justify-content: space-around;
+        overflow: hidden;
 }
 
 .porte-container {
