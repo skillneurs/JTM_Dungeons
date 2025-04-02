@@ -1,3 +1,6 @@
+body{
+    overflow: hidden;
+}
 .btnchoix {
     box-shadow: 1px 2px 3px 2px #bababa;
     background:linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
