@@ -26,6 +26,8 @@ main{
     background-image: url(../Img/raw.png);
     height: 100vh;
     overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .duobtn{
