@@ -1,7 +1,7 @@
 body{
     overflow: hidden;
 }
-.btnchoix {
+.btnchoix{
     box-shadow: 1px 2px 3px 2px #cb9755;
     border-radius: 24px;
     border: 1px solid #845f39;
@@ -15,11 +15,10 @@ body{
     text-shadow: 0px 1px 10px #f0a3f0;
     background-color: #47705c;
 }
-.btnchoix:hover {
-    background:linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
-    background-color:#dfdfdf;
+.btnchoix:hover{
+    background-color:#4a5552;
 }
-.btnchoix:active {
+.btnchoix:active{
     position:relative;
     top:1px;
 }
@@ -35,10 +34,4 @@ main{
     padding-top: 32rem;
     padding-right: 28rem;
     padding-left: 18rem;
-}
-#btnsauter:hover{
-
-}
-#btnescalader:hover{
-
 }
