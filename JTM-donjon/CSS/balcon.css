@@ -2,19 +2,18 @@ body{
     overflow: hidden;
 }
 .btnchoix {
-    box-shadow: 1px 2px 3px 2px #bababa;
-    background:linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
-    background-color:#ededed;
-    border-radius:24px;
-    border:1px solid #dcdcdc;
-    display:inline-block;
-    cursor:pointer;
-    color:#777777;
-    font-family:Arial;
-    font-size:16px;
-    padding:17px 9px;
-    text-decoration:none;
-    text-shadow:0px 1px 10px #f0a3f0;
+    box-shadow: 1px 2px 3px 2px #cb9755;
+    border-radius: 24px;
+    border: 1px solid #845f39;
+    display: inline-block;
+    cursor: pointer;
+    color: #b7e2d1;
+    font-family: Arial;
+    font-size: 16px;
+    padding: 17px 9px;
+    text-decoration: none;
+    text-shadow: 0px 1px 10px #f0a3f0;
+    background-color: #47705c;
 }
 .btnchoix:hover {
     background:linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
@@ -28,4 +27,18 @@ main{
     background-image: url(../Img/raw.png);
     height: 100vh;
     overflow: hidden;
+}
+
+.duobtn{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 32rem;
+    padding-right: 28rem;
+    padding-left: 18rem;
+}
+#btnsauter:hover{
+
+}
+#btnescalader:hover{
+
 }
