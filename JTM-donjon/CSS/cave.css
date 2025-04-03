@@ -24,8 +24,10 @@ body{
 }
 main{
     background-image: url(../Img/cave.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     height: 100vh;
-    overflow: hidden;
 }
 
 .duobtn2{
