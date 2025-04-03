@@ -1,5 +1,7 @@
 body{
     overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
 .btnchoixcave{
     box-shadow: 1px 2px 3px 2px #cb9755;
@@ -34,6 +36,6 @@ main{
     display: flex;
     justify-content: space-between;
     padding-top: 32rem;
-    padding-right: 28rem;
-    padding-left: 18rem;
+    padding-right: 26rem;
+    padding-left: 26rem;
 }
