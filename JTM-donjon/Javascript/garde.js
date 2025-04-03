@@ -1,7 +1,10 @@
-const btncontinue = document.getElementById("btncontinuer")
+document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.getElementById("btncontinuer");
+    const main = document.querySelector("main.test");
 
-btncontinue.addEventListener("click", function() {
-    document.body.classList.remove("background-active");
-    document.body.classList.add("background-disabled");
+    btn.addEventListener("click", function () {
+        main.style.background = "none"; // Supprime le background
+    });
 });
+
 
