@@ -50,4 +50,16 @@ main{
 .animation {
     animation: blurFadeOut 3s forwards; 
 }
+.popuplose{
+    font-size: 36px;
+    position: absolute;
+    color: red;
+    padding-top: 16rem;
+    padding-right: 20rem;
+    padding-left: 20rem;
+}
+.none{
+    display: none !important;
+}
+
 

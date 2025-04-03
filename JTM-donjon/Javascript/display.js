@@ -2,6 +2,7 @@ const start = document.querySelector("#closePopup")
 const popup = document.getElementById("popup")
 const canvas = document.querySelector('#renderCanvas')
 
+
 start.addEventListener("click", function () {
    popup.style.display="none"
    canvas.style.display = 'block'
@@ -13,4 +14,6 @@ document.addEventListener("keydown", function(event) {
         canvas.style.display = 'none';
     }
 });
+
+
 
