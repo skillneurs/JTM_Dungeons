@@ -84,6 +84,7 @@ main{
     text-align: center;
     padding-left: 8rem;
     padding-right: 8rem;
+    z-index: 2;
 }
 .none2{
     display: none !important;
