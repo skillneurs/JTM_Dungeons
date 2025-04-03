@@ -5,19 +5,18 @@ body{
     background-color: rgb(14, 12, 12);
 }
 #btncontinuer{
-    box-shadow: 1px 2px 3px 2px #cb9755;
+    box-shadow: 1px 2px 3px 2px #5e230e;
     border-radius: 24px;
-    border: 1px solid #845f39;
+    border: 1px solid #66290e;
     display: inline-block;
     cursor: pointer;
-    color: #b7e2d1;
+    color: #d5ba8e;
     font-family: Arial;
     font-size: 16px;
     padding: 17px 9px;
     text-decoration: none;
     text-shadow: 0px 1px 10px #f0a3f0;
-    background-color: #47705c;
-  
+    background-color: #2b2c21;
 }
 #btncontinuer:hover{
     background-color:#4a5552;
@@ -72,7 +71,7 @@ main{
 }
 
 .animation {
-    animation: blurFadeOut 2s forwards; 
+    animation: blurFadeOut 1s forwards; 
 }
 .popuplose{
     font-size: 36px;
@@ -87,17 +86,17 @@ main{
     display: none !important;
 }
 .boutonok{
-    box-shadow: 1px 2px 3px 2px #cb9755;
+    box-shadow: 1px 2px 3px 2px #d04943;
     border-radius: 24px;
-    border: 1px solid #845f39;
+    border: 1px solid #33312f;
     display: inline-block;
     cursor: pointer;
-    color: #b7e2d1;
+    color: #ff0000;
     font-family: Arial;
     font-size: 16px;
     padding: 17px 17px;
     text-decoration: none;
     text-shadow: 0px 1px 10px #f0a3f0;
-    background-color: #47705c;
+    background-color: #252b28;
 }
 
