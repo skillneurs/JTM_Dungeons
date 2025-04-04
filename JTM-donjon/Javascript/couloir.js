@@ -1,1 +1,0 @@
-const porte1 = document.getElementById("porte1")
