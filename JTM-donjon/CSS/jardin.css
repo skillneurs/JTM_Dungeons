@@ -5,32 +5,32 @@ body{
     background-color: rgb(14, 12, 12);
 }
 #btncontinuer3{
-    box-shadow: 1px 2px 3px 2px #cb9755;
+    box-shadow: 1px 2px 3px 2px #1b4d15;
     border-radius: 24px;
-    border: 1px solid #845f39;
+    border: 1px solid #2e5614;
     display: inline-block;
     cursor: pointer;
-    color: #b7e2d1;
+    color: #d7ab74;
     font-family: Arial;
     font-size: 16px;
     padding: 17px 9px;
     text-decoration: none;
     text-shadow: 0px 1px 10px #f0a3f0;
     background-color: #47705c;
-  
 }
 #btncontinuer3:hover{
     background-color:#4a5552;
 }
-#btncontinuerdiv3{
-        padding: 20rem;
-}
-main{
+
+.test3{
     background-image: url(../Img/jardin_avec_dragon.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 @keyframes blurFadeOut {
     0% {
@@ -76,7 +76,7 @@ main{
 }
 .popuplose3{
     font-size: 36px;
-    color: rgb(94, 94, 233);
+    color: red;
     position: absolute;
     padding-top: 16rem;
     text-align: center;
@@ -102,3 +102,28 @@ main{
     background-color: #47705c;
 }
 
+.popupwin{
+    font-size: 36px;
+    color: rgb(94, 94, 233);
+    position: absolute;
+    padding-top: 16rem;
+    text-align: center;
+    padding-left: 8rem;
+    padding-right: 8rem;
+    z-index: 2;
+}
+
+#btncontinuer4{
+    box-shadow: 1px 2px 3px 2px #1b4d15;
+    border-radius: 24px;
+    border: 1px solid #2e5614;
+    display: inline-block;
+    cursor: pointer;
+    color: #d7ab74;
+    font-family: Arial;
+    font-size: 16px;
+    padding: 17px 9px;
+    text-decoration: none;
+    text-shadow: 0px 1px 10px #f0a3f0;
+    background-color: #47705c;
+}
