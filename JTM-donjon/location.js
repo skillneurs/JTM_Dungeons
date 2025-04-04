@@ -10,6 +10,11 @@ window.location = "balcon.html"
 
 porte2.addEventListener("click", function () {
 
-    window.location = ".html"
+    window.location = "cave.html"
     
-    })
+})
+porte3.addEventListener("click", function () {
+
+    window.location = "garde.html"
+    
+})
