@@ -20,6 +20,10 @@ body {
     border-top-left-radius: 160px;
 }
 
+.porte-container:hover{
+    cursor: pointer;
+}
+
 .porte {
     position: absolute;
     width: 50%;
