@@ -5,19 +5,18 @@ body{
     background-color: rgb(14, 12, 12);
 }
 #btncontinuer{
-    box-shadow: 1px 2px 3px 2px #cb9755;
+    box-shadow: 1px 2px 3px 2px #5e230e;
     border-radius: 24px;
-    border: 1px solid #845f39;
+    border: 1px solid #66290e;
     display: inline-block;
     cursor: pointer;
-    color: #b7e2d1;
+    color: #d5ba8e;
     font-family: Arial;
     font-size: 16px;
     padding: 17px 9px;
     text-decoration: none;
     text-shadow: 0px 1px 10px #f0a3f0;
-    background-color: #47705c;
-  
+    background-color: #2b2c21;
 }
 #btncontinuer:hover{
     background-color:#4a5552;
@@ -37,9 +36,33 @@ main{
         filter: blur(0px);
         opacity: 1;
     }
+    10% {
+        filter: blur(2px);
+        opacity: 0.9;
+    }
+    25% {
+        filter: blur(5px);
+        opacity: 0.75;
+    }
+    35% {
+        filter: blur(7px);
+        opacity: 0.65;
+    }
     50% {
         filter: blur(10px);
         opacity: 0.5;
+    }
+    65% {
+        filter: blur(13px);
+        opacity: 0.35;
+    }
+    75% {
+        filter: blur(15px);
+        opacity: 0.25;
+    }
+    90% {
+        filter: blur(18px);
+        opacity: 0.1;
     }
     100% {
         filter: blur(20px);
@@ -48,31 +71,33 @@ main{
 }
 
 .animation {
-    animation: blurFadeOut 3s forwards; 
+    animation: blurFadeOut 1s forwards; 
 }
 .popuplose{
     font-size: 36px;
-    position: absolute;
     color: red;
+    position: absolute;
     padding-top: 16rem;
-    padding-right: 20rem;
-    padding-left: 20rem;
+    text-align: center;
+    padding-left: 8rem;
+    padding-right: 8rem;
+    z-index: 2;
 }
 .none{
     display: none !important;
 }
 .boutonok{
-    box-shadow: 1px 2px 3px 2px #cb9755;
+    box-shadow: 1px 2px 3px 2px #d04943;
     border-radius: 24px;
-    border: 1px solid #845f39;
+    border: 1px solid #33312f;
     display: inline-block;
     cursor: pointer;
-    color: #b7e2d1;
+    color: #ff0000;
     font-family: Arial;
     font-size: 16px;
     padding: 17px 17px;
     text-decoration: none;
     text-shadow: 0px 1px 10px #f0a3f0;
-    background-color: #47705c;
+    background-color: #252b28;
 }
 

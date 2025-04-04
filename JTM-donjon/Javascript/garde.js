@@ -16,8 +16,3 @@ btncontinue.addEventListener("click", function () {
         console.log("L'élément popuplose n'a pas été trouvé !");
     }
 });
-
-
-
-
-
