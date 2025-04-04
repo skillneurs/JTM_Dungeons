@@ -30,7 +30,6 @@ main{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    
     height: 100vh;
 }
 @keyframes blurFadeOut {
@@ -73,11 +72,11 @@ main{
 }
 
 .animation3 {
-    animation: blurFadeOut 3s forwards; 
+    animation: blurFadeOut 1s forwards; 
 }
 .popuplose3{
     font-size: 36px;
-    color: red;
+    color: rgb(94, 94, 233);
     position: absolute;
     padding-top: 16rem;
     text-align: center;
