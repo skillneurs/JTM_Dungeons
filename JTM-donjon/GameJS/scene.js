@@ -181,6 +181,50 @@ export const createScene = function (engine, canvas) {
     ceiling.position.y = wallHeight + wallThickness / 2; // Position au-dessus des murs
     ceiling.checkCollisions = true; // Activer les collisions pour le plafond
 
+    // Ajouter un ciel bleu
+    const skybox = BABYLON.MeshBuilder.CreateSphere("skybox", { diameter: 1000, segments: 32 }, scene);
+    skybox.infiniteDistance = true; // Le ciel reste fixe par rapport à la caméra
+
+    // Créer un matériau pour le ciel
+    const skyMaterial = new BABYLON.StandardMaterial("skyMaterial", scene);
+    skyMaterial.diffuseColor = new BABYLON.Color3(0.5, 0.8, 1); // Bleu clair
+    skyMaterial.specularColor = new BABYLON.Color3(0, 0, 0); // Pas de reflets
+    skyMaterial.backFaceCulling = false; // Afficher l'intérieur de la sphère
+    skybox.material = skyMaterial;
+
+    // Ajouter une lumière directionnelle pour simuler le soleil
+    const sunLight = new BABYLON.DirectionalLight("sunLight", new BABYLON.Vector3(0, -1, 0), scene);
+    sunLight.position = new BABYLON.Vector3(50, 50, 50);
+    sunLight.intensity = 1.5; // Intensité de la lumière
+
+    // Ajouter une sphère jaune pour représenter le soleil
+    const sun = BABYLON.MeshBuilder.CreateSphere("sun", { diameter: 5 }, scene);
+    sun.position = sunLight.position; // Positionner la sphère au même endroit que la lumière
+    const sunMaterial = new BABYLON.StandardMaterial("sunMaterial", scene);
+    sunMaterial.emissiveColor = new BABYLON.Color3(1, 1, 0); // Jaune brillant
+    sun.material = sunMaterial;
+
+    // Ajouter un générateur d'ombres pour la lumière directionnelle
+    const shadowGenerator = new BABYLON.ShadowGenerator(1024, sunLight);
+    shadowGenerator.useBlurExponentialShadowMap = true; // Activer les ombres floues
+    shadowGenerator.blurScale = 2; // Ajuster le flou des ombres
+    shadowGenerator.setDarkness(0.5); // Ajuster l'obscurité des ombres
+
+    // Ajouter les objets qui projettent des ombres
+    shadowGenerator.addShadowCaster(wallFront);
+    shadowGenerator.addShadowCaster(wallBackWithWindowMesh);
+    shadowGenerator.addShadowCaster(wallLeft);
+    shadowGenerator.addShadowCaster(wallRight);
+    shadowGenerator.addShadowCaster(ceiling);
+
+    // Activer la réception des ombres
+    ground.receiveShadows = true;
+    wallFront.receiveShadows = true;
+    wallBackWithWindowMesh.receiveShadows = true;
+    wallLeft.receiveShadows = true;
+    wallRight.receiveShadows = true;
+    ceiling.receiveShadows = true;
+
     //BABYLON.SceneLoader.ImportMesh("", "./GameJS/model/", "Test_prison.gltf", scene)
     // Gérer les entrées clavier pour le mouvement
     let inputMap = {
