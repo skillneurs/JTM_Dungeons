@@ -49,3 +49,20 @@ body{
     pointer-events: none; /* Empêche les interactions avec le viseur */
     display: none; /* Caché par défaut */
 }
+
+
+#code{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-size: 2rem;
+    color: white;
+    background-color: black;
+    z-index: 1000;
+    position: absolute;
+    
+}
+#codeBefore{
+    display: none;
+}

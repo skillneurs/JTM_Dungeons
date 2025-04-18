@@ -129,7 +129,7 @@ export const createScene = function (engine, canvas) {
     const wallBack = BABYLON.MeshBuilder.CreateBox("wallBack", { width: groundWidth, height: wallHeight, depth: wallThickness }, scene);
     wallBack.position.z = groundWidth / 2 + wallThickness / 2; // Position derrière le sol
     wallBack.position.y = wallHeight / 2;
-    
+
 
     // Mur gauche
     const wallLeft = BABYLON.MeshBuilder.CreateBox("wallLeft", { width: wallThickness, height: wallHeight, depth: groundWidth }, scene);
@@ -141,7 +141,50 @@ export const createScene = function (engine, canvas) {
     const wallRight = BABYLON.MeshBuilder.CreateBox("wallRight", { width: wallThickness, height: wallHeight, depth: groundWidth }, scene);
     wallRight.position.x = groundWidth / 2 + wallThickness / 2; // Position à droite du sol
     wallRight.position.y = wallHeight / 2;
-    wallRight.material = wallMaterial; // Appliquer le matériau au mur droit
+
+    // Découper une porte rectangulaire dans le mur droit
+    const wallRightCSG = BABYLON.CSG.FromMesh(wallRight); // Convertir le mur droit en CSG
+
+    // Créer la forme rectangulaire de la porte
+    const doorShape = BABYLON.MeshBuilder.CreateBox("doorShape", { width: 2, height: 5, depth: wallThickness + 3 }, scene);
+    doorShape.position = new BABYLON.Vector3(wallRight.position.x, 1.5, 0); // Positionner la porte au milieu du mur droit
+
+    // Soustraire la porte du mur droit
+    const wallRightWithDoor = wallRightCSG.subtract(BABYLON.CSG.FromMesh(doorShape)); // Soustraire la porte
+    wallRight.dispose(); // Supprimer l'ancien mur droit
+    doorShape.dispose(); // Supprimer la forme de la porte
+
+    // Créer le nouveau mur droit avec la porte
+    const wallRightWithDoorMesh = wallRightWithDoor.toMesh("wallRightWithDoor", null, scene);
+    wallRightWithDoorMesh.material = wallMaterial; // Appliquer le matériau au mur droit
+    wallRightWithDoorMesh.checkCollisions = true; // Activer les collisions pour le mur droit
+
+    // Ajouter deux moitiés de porte à partir de la porte existante
+    const doorLeft = BABYLON.MeshBuilder.CreateBox("doorLeft", { width: 2, height: 4, depth: 0.4 }, scene); // Moitié gauche
+    doorLeft.position = new BABYLON.Vector3(wallRightWithDoorMesh.position.x - 0.75, 2, -1.75); // Positionner la moitié gauche
+    doorLeft.rotation.y = Math.PI / 2; // Position fermée initiale
+    doorLeft.setPivotMatrix(BABYLON.Matrix.Translation(-0.75, 0, 0)); // Déplacer le pivot vers le bord droit
+
+
+
+
+    const doorRight = BABYLON.MeshBuilder.CreateBox("doorRight", { width: 2, height: 4, depth: 0.4 }, scene); // Moitié droite
+    doorRight.position = new BABYLON.Vector3(wallRightWithDoorMesh.position.x + 0.75, 2, 1.75); // Positionner la moitié droite
+    doorRight.rotation.y = Math.PI / 2; // Position fermée initiale
+    doorRight.setPivotMatrix(BABYLON.Matrix.Translation(0.75, 0, 0)); // Déplacer le pivot vers le bord gauche
+
+
+
+    // Appliquer un matériau aux deux moitiés
+    const doorMaterial = new BABYLON.StandardMaterial("doorMaterial", scene);
+    const doorTexture = new BABYLON.Texture("/JTM-donjon/Img/porte.webp", scene); // Charger une texture pour la porte
+    doorMaterial.diffuseTexture = doorTexture; // Appliquer la texture au matériau
+    doorLeft.material = doorMaterial;
+    doorRight.material = doorMaterial;
+
+    // Activer les collisions pour les deux moitiés
+    doorLeft.checkCollisions = true;
+    doorRight.checkCollisions = true;
 
 
 
@@ -162,11 +205,11 @@ export const createScene = function (engine, canvas) {
     const barSpacingBack = 0.4; // Espacement entre les barreaux
     for (let i = 0; i < barCountBack; i++) {
         const barBack = BABYLON.MeshBuilder.CreateCylinder(`barBack${i}`, { diameter: 0.1, height: 1.5 }, scene); // Créer un barreau
-        barBack.position = new BABYLON.Vector3(-0.6 + i * barSpacingBack, wallHeight - 1, wallBack.position.z - wallThickness / 5 ); // Positionner le barreau
+        barBack.position = new BABYLON.Vector3(-0.6 + i * barSpacingBack, wallHeight - 1, wallBack.position.z - wallThickness / 5); // Positionner le barreau
         barBack.rotation.x = 0; // Aligner le barreau verticalement
     }
 
-    wallBack.material = wallMaterial;
+    wallBackWithWindowMesh.material = wallMaterial;
 
 
 
@@ -214,7 +257,7 @@ export const createScene = function (engine, canvas) {
     shadowGenerator.addShadowCaster(wallFront);
     shadowGenerator.addShadowCaster(wallBackWithWindowMesh);
     shadowGenerator.addShadowCaster(wallLeft);
-    shadowGenerator.addShadowCaster(wallRight);
+    shadowGenerator.addShadowCaster(wallRightWithDoorMesh);
     shadowGenerator.addShadowCaster(ceiling);
 
     // Activer la réception des ombres
@@ -222,15 +265,15 @@ export const createScene = function (engine, canvas) {
     wallFront.receiveShadows = true;
     wallBackWithWindowMesh.receiveShadows = true;
     wallLeft.receiveShadows = true;
-    wallRight.receiveShadows = true;
+    wallRightWithDoorMesh.receiveShadows = true;
     ceiling.receiveShadows = true;
 
     //BABYLON.SceneLoader.ImportMesh("", "./GameJS/model/", "Test_prison.gltf", scene)
     // Gérer les entrées clavier pour le mouvement
     let inputMap = {
-        "KeyW": false,  // Correspond à la touche "Z"
-        "KeyA": false,  // Correspond à la touche "Q"
-        "KeyS": false,  // Correspond à la touche "S"
+        "KeyW": false,
+        "KeyA": false,
+        "KeyS": false,
         "KeyD": false,
         "ArrowUp": false,
         "ArrowDown": false,
@@ -288,5 +331,96 @@ export const createScene = function (engine, canvas) {
         camera.position.z = player.position.z; // Décalage arrière pour éloigner la caméra
     });
 
-    return scene;
-};
+    // Fonction pour vérifier si les portes peuvent s'ouvrir
+    let canOpenDoors = false
+    scene.onPointerObservable.add((pointerInfo) => {
+        if (pointerInfo.type === BABYLON.PointerEventTypes.POINTERDOWN) {
+            // Vérifiez si le pointeur est verrouillé
+            if (document.pointerLockElement === canvas) {
+                if (pointerInfo.pickInfo.hit) {
+                    const pickedMesh = pointerInfo.pickInfo.pickedMesh;
+    
+                    // Vérifiez si l'objet cliqué est une porte
+                    if (pickedMesh.name === "doorLeft" || pickedMesh.name === "doorRight") {
+                        let code = document.getElementById("codeBefore");
+                        code.id = "code";
+                        let code_input = document.getElementById("codeInput");
+                        let sub_code = document.getElementById("submitCode");
+                        sub_code.addEventListener("click", function () {
+                            // Vérifiez si le code est correct
+                            if (code_input.value == '2606') {
+                                canOpenDoors = true;
+                                code.id = "codeBefore";
+                                setTimeout(() => {
+                                    window.location = "couloir.html"; 
+                                }, 5000);
+                            } else {
+                                let p = document.createElement("p");
+                                p.textContent = "Code incorrect !";
+                                p.style.color = "red";
+                                p.style.fontSize = "20px";
+                                code.appendChild(p);
+                                setTimeout(() => {
+                                    p.remove();
+                                }, 2000);
+                            }
+    
+                            // Vérifiez si les portes ne sont pas déjà ouvertes
+                            if (!doorLeft.isOpen && !doorRight.isOpen) {
+                                // Vérifiez si les conditions pour ouvrir les portes sont remplies
+                                if (canOpenDoors) {
+                                    // Définir les animations pour la porte gauche
+                                    const leftDoorAnimation = new BABYLON.Animation(
+                                        "leftDoorAnimation",
+                                        "rotation.y",
+                                        30, // Framerate
+                                        BABYLON.Animation.ANIMATIONTYPE_FLOAT,
+                                        BABYLON.Animation.ANIMATIONLOOPMODE_CONSTANT
+                                    );
+    
+                                    const leftKeys = [
+                                        { frame: 0, value: doorLeft.rotation.y }, // Position actuelle
+                                        { frame: 30, value: doorLeft.rotation.y - Math.PI / 2 } // Rotation finale
+                                    ];
+    
+                                    leftDoorAnimation.setKeys(leftKeys);
+                                    doorLeft.animations = [];
+                                    doorLeft.animations.push(leftDoorAnimation);
+    
+                                    // Définir les animations pour la porte droite
+                                    const rightDoorAnimation = new BABYLON.Animation(
+                                        "rightDoorAnimation",
+                                        "rotation.y",
+                                        30, // Framerate
+                                        BABYLON.Animation.ANIMATIONTYPE_FLOAT,
+                                        BABYLON.Animation.ANIMATIONLOOPMODE_CONSTANT
+                                    );
+    
+                                    const rightKeys = [
+                                        { frame: 0, value: doorRight.rotation.y }, // Position actuelle
+                                        { frame: 30, value: doorRight.rotation.y + Math.PI / 2 } // Rotation finale
+                                    ];
+    
+                                    rightDoorAnimation.setKeys(rightKeys);
+                                    doorRight.animations = [];
+                                    doorRight.animations.push(rightDoorAnimation);
+    
+                                    // Lancer les animations pour les deux portes
+                                    scene.beginAnimation(doorLeft, 0, 30, false);
+                                    scene.beginAnimation(doorRight, 0, 30, false);
+    
+                                    // Marquer les portes comme ouvertes
+                                    doorLeft.isOpen = true;
+                                    doorRight.isOpen = true;
+                                }
+                            }
+                        });
+                    }
+                }
+            } else {
+                console.log("Pointer is not locked. Cannot interact with doors.");
+            }
+        }
+    });
+return scene;
+}
