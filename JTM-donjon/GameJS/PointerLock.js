@@ -7,6 +7,7 @@ canvas.addEventListener('click', () => {
     
 })
 
+
 document.addEventListener('pointerlockchange', () => {
     if (document.pointerLockElement){
         crosshair.style.display = 'block'

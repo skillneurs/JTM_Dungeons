@@ -339,20 +339,25 @@ export const createScene = function (engine, canvas) {
             if (document.pointerLockElement === canvas) {
                 if (pointerInfo.pickInfo.hit) {
                     const pickedMesh = pointerInfo.pickInfo.pickedMesh;
-    
+
                     // Vérifiez si l'objet cliqué est une porte
                     if (pickedMesh.name === "doorLeft" || pickedMesh.name === "doorRight") {
-                        let code = document.getElementById("codeBefore");
-                        code.id = "code";
+                        let code = document.querySelector(".code_sercret");
+                        if (code) {
+                            code.setAttribute("id", "code");
+                        } else {
+                            console.error("Element with ID 'codeBefore' not found.");
+                        }
                         let code_input = document.getElementById("codeInput");
                         let sub_code = document.getElementById("submitCode");
                         sub_code.addEventListener("click", function () {
                             // Vérifiez si le code est correct
                             if (code_input.value == '2606') {
                                 canOpenDoors = true;
-                                code.id = "codeBefore";
+                                code.display = "none"; // Masquer le code après la soumission
+                                code_input.value = ""; // Réinitialiser le champ de saisie
                                 setTimeout(() => {
-                                    window.location = "couloir.html"; 
+                                    window.location = "couloir.html";
                                 }, 5000);
                             } else {
                                 let p = document.createElement("p");
@@ -362,9 +367,12 @@ export const createScene = function (engine, canvas) {
                                 code.appendChild(p);
                                 setTimeout(() => {
                                     p.remove();
+                                    code.setAttribute("id", "codeBefore");
+
+
                                 }, 2000);
                             }
-    
+
                             // Vérifiez si les portes ne sont pas déjà ouvertes
                             if (!doorLeft.isOpen && !doorRight.isOpen) {
                                 // Vérifiez si les conditions pour ouvrir les portes sont remplies
@@ -377,16 +385,16 @@ export const createScene = function (engine, canvas) {
                                         BABYLON.Animation.ANIMATIONTYPE_FLOAT,
                                         BABYLON.Animation.ANIMATIONLOOPMODE_CONSTANT
                                     );
-    
+
                                     const leftKeys = [
                                         { frame: 0, value: doorLeft.rotation.y }, // Position actuelle
                                         { frame: 30, value: doorLeft.rotation.y - Math.PI / 2 } // Rotation finale
                                     ];
-    
+
                                     leftDoorAnimation.setKeys(leftKeys);
                                     doorLeft.animations = [];
                                     doorLeft.animations.push(leftDoorAnimation);
-    
+
                                     // Définir les animations pour la porte droite
                                     const rightDoorAnimation = new BABYLON.Animation(
                                         "rightDoorAnimation",
@@ -395,32 +403,39 @@ export const createScene = function (engine, canvas) {
                                         BABYLON.Animation.ANIMATIONTYPE_FLOAT,
                                         BABYLON.Animation.ANIMATIONLOOPMODE_CONSTANT
                                     );
-    
+
                                     const rightKeys = [
                                         { frame: 0, value: doorRight.rotation.y }, // Position actuelle
                                         { frame: 30, value: doorRight.rotation.y + Math.PI / 2 } // Rotation finale
                                     ];
-    
+
                                     rightDoorAnimation.setKeys(rightKeys);
                                     doorRight.animations = [];
                                     doorRight.animations.push(rightDoorAnimation);
-    
+
                                     // Lancer les animations pour les deux portes
                                     scene.beginAnimation(doorLeft, 0, 30, false);
                                     scene.beginAnimation(doorRight, 0, 30, false);
-    
+
                                     // Marquer les portes comme ouvertes
                                     doorLeft.isOpen = true;
                                     doorRight.isOpen = true;
                                 }
                             }
                         });
+                    } else if (pickedMesh.name === "torchBase" || pickedMesh.name === "torchHead") {
+
+                        let message = document.getElementById("message_coder");
+                        message.id = "message"
+                        setTimeout(() => {
+                            message.id = "message_coder"
+                        }, 5000);
                     }
                 }
-            } else {
-                console.log("Pointer is not locked. Cannot interact with doors.");
             }
         }
     });
-return scene;
+
+    // Gérer le clic de la souris pour verrouiller le pointeur
+    return scene;
 }
