@@ -342,20 +342,15 @@ export const createScene = function (engine, canvas) {
 
                     // Vérifiez si l'objet cliqué est une porte
                     if (pickedMesh.name === "doorLeft" || pickedMesh.name === "doorRight") {
-                        let code = document.querySelector(".code_sercret");
-                        if (code) {
-                            code.setAttribute("id", "code");
-                        } else {
-                            console.error("Element with ID 'codeBefore' not found.");
-                        }
+                        let code = document.getElementById("codeBefore");
+                        code.id = "code";
                         let code_input = document.getElementById("codeInput");
                         let sub_code = document.getElementById("submitCode");
                         sub_code.addEventListener("click", function () {
                             // Vérifiez si le code est correct
                             if (code_input.value == '2606') {
                                 canOpenDoors = true;
-                                code.display = "none"; // Masquer le code après la soumission
-                                code_input.value = ""; // Réinitialiser le champ de saisie
+                                code.id = "codeBefore";
                                 setTimeout(() => {
                                     window.location = "couloir.html";
                                 }, 5000);
@@ -367,9 +362,7 @@ export const createScene = function (engine, canvas) {
                                 code.appendChild(p);
                                 setTimeout(() => {
                                     p.remove();
-                                    code.setAttribute("id", "codeBefore");
-
-
+                                    code.id = "codeBefore";
                                 }, 2000);
                             }
 
@@ -435,7 +428,7 @@ export const createScene = function (engine, canvas) {
             }
         }
     });
-
+    
     // Gérer le clic de la souris pour verrouiller le pointeur
     return scene;
 }
