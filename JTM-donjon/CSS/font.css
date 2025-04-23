@@ -1,0 +1,7 @@
+@font-face {
+    font-family: Medieval ;
+    src: url(../font/Enchanted\ Land.otf);
+}
+*{
+    font-family: 'Medieval' , sans-serif;
+}
