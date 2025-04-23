@@ -1,4 +1,4 @@
-#hero{
+#hero {
     height: 100vh;
     background-image: url(../Img/BGjtm.webp);
     background-size: cover;
@@ -7,17 +7,26 @@
     width: 100%;
     display: flex;
 }
-body{
+
+body {
     padding: 0;
     margin: 0;
 }
-main{
-    
-   
+
+main {
+
+
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     border: none;
+}
+a{
+    text-decoration: none;
+    color : white;
+}
+li {
+    list-style: none;
 }
 
 /*header*/
@@ -25,41 +34,70 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.8); 
-    position: fixed; 
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
     width: 100vw;
     padding: 0px;
     z-index: 100;
 }
-h1{
+
+h1 {
     color: rgb(237, 237, 215);
 }
-#logo{
+
+#logo {
     width: 77px;
     object-fit: cover;
-    margin:0;
-   }
-   /*menu header*/
+    margin: 0;
+}
+ul{
+    margin: 0;
+    list-style-type: none;
+    padding: 40px
+}
+
+/*menu header*/
+
 #menu {
-  
-    cursor: pointer; 
-    filter: invert(1); 
+
+    cursor: pointer;
+    filter: invert(1);
     padding-right: 2rem;
     width: 4%;
     height: 5%;
     object-fit: cover;
 }
+
 .menuItem {
-    display: none; 
+    display: block;
     position: absolute;
-    right: 20px;
-    top: 60px;
-    background: rgba(0, 0, 0, 0.9);
-    border-radius: 5px;
-    padding: 10px;
+    top: -200%;
+    right: 1%;
+    text-decoration: none;
+    transition: 0.3s ease-in-out; 
+    text-align: center;
 }
+
+.menuh {
+    display: block;
+    position : absolute;
+    top: 100%;
+    right: 1%;
+    color: white;
+    font-size: 26px;
+    text-shadow: 2px 2px 3px rgba(11, 5, 3, 0.681);
+    transition: 0.3s ease-in-out;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, 0.777);
+
+    text-align: center;
+    
+}
+
+
 /*btn start*/
-#sectionstart{
+#sectionstart {
     display: flex;
     justify-content: center;
     margin: auto;
@@ -69,18 +107,22 @@ h1{
 .titre{
     font-size: 6rem;
 }
+
 @keyframes pulse {
     0% {
-      transform: scale(1);
+        transform: scale(1);
     }
+
     50% {
-      transform: scale(1.2); 
+        transform: scale(1.2);
     }
+
     100% {
-      transform: scale(1);
+        transform: scale(1);
     }
-  }
-#start{
+}
+
+#start {
     padding-left: 4rem;
     padding-right: 4rem;
     padding-bottom: 2rem;
@@ -94,17 +136,20 @@ h1{
     text-decoration: none;
 
     transition: 0.3s ease;
-    animation: pulse 1.5s infinite; 
+    animation: pulse 1.5s infinite;
 }
-#start:hover{
+
+#start:hover {
     cursor: pointer;
     background-color: #989090a5;
 }
+
 /*text main*/
-h2{
+h2 {
     margin: 0;
 }
-#info{
+
+#info {
     display: flex;
     padding: 3rem;
     background-image: url(../Img/bg2.webp);
@@ -113,7 +158,8 @@ h2{
     height: 60vw;
     background-repeat: no-repeat;
 }
-#nous{
+
+#nous {
     display: flex;
     padding: 3rem;
     background-image: url(../Img/image_biblio.webp);
@@ -122,47 +168,56 @@ h2{
     background-position: center;
     height: 60vw;
 }
-.info2{
+
+.info2 {
     color: white;
     text-align: center;
-    text-shadow: 2px 2px 3px rgba(11,5,3,0.5);
+    text-shadow: 2px 2px 3px rgba(11, 5, 3, 0.5);
     width: 80%;
     margin: auto;
 }
-.infoh2{
+
+.infoh2 {
     font-size: 48px;
 }
-.infop{
+
+.infop {
     font-size: 20px;
-    
+
 }
+
 /*section cut hero/main */
-#flou{
+#flou {
     background: linear-gradient(to bottom, #0e0e0e, #313534);
     color: transparent;
 }
-#flou2{
+
+#flou2 {
     background: linear-gradient(to bottom, #0e0e0e, #433c27);
     color: transparent;
 }
-#flou3{
+
+#flou3 {
     background: linear-gradient(to bottom, #433c27, #4e4747);
     color: transparent;
 }
+
 /*footer*/
-footer{
+footer {
     background-color: #4e4747;
     padding-top: 2rem;
     padding-bottom: 2rem;
 }
-#linkedinProfil{
+
+#linkedinProfil {
     display: flex;
     justify-content: space-around;
     width: 90%;
     margin: auto;
-    
+
 }
-.linkedina{
+
+.linkedina {
     padding: 1rem;
     background-color: rgb(213, 209, 203);
     border-radius: 1rem;
@@ -170,33 +225,40 @@ footer{
     color: black;
     text-align: center;
 }
-.linkedina:hover{
+
+.linkedina:hover {
     background-color: #a2d0cc;
 }
 
-@media (max-width: 500px){
-    #start{
+@media (max-width: 500px) {
+    #start {
         padding: 2rem;
     }
-    #menu{
+
+    #menu {
         padding-right: 1rem;
         width: 5%;
     }
-    h1{
+
+    h1 {
         font-size: 24px;
     }
-    #logo{
+
+    #logo {
         width: 60px;
     }
-    #info{
+
+    #info {
         padding: 1rem;
         height: 120vw;
     }
-    #nous{
+
+    #nous {
         padding: 1rem;
         height: 120vw;
     }
-    #linkedinProfil{
+
+    #linkedinProfil {
         flex-direction: column;
         gap: 1rem;
     }

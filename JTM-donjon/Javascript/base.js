@@ -1,11 +1,10 @@
+let menu = document.querySelector(".menuItem")
+let btnMenu = document.querySelector("#menu")
 
 
-/*document.addEventListener("DOMContentLoaded", function () {
-    let menu = document.querySelector(".menuItem");
-    let menuIcon = document.getElementById("menu");
+btnMenu.addEventListener("click", function () {
+    
+    menu.classList.toggle("menuh")
+    
 
-    menuIcon.addEventListener("click", function () {
-        menu.classList.toggle("menuActive"); 
-    });
-});*/
-
+})
