@@ -32,6 +32,7 @@
     text-decoration: none;
     transition: 0.3s ease;
     animation: pulse 1.5s infinite;
+    cursor: pointer;
 }
 @keyframes pulse {
     0% {
