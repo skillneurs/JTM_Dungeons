@@ -101,6 +101,11 @@ ul{
     display: flex;
     justify-content: center;
     margin: auto;
+    flex-direction: column;
+    align-items: center;
+}
+.titre{
+    font-size: 6rem;
 }
 
 @keyframes pulse {
