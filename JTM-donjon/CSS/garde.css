@@ -102,3 +102,8 @@ main{
     background-color: #252b28;
 }
 
+.code{
+    display: flex;
+    font-size: 6px;
+    justify-content: flex-end;
+}
