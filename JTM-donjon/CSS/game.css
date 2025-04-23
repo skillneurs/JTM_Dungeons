@@ -5,17 +5,45 @@
 
 #popup{
     display: flex;
+    background-color: #ffffff91;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 600px;
-    margin:2rem auto;
+    margin: 2rem auto;
     border-radius: 25px;
     box-shadow: -1px 1px 10px 0px rgba(0, 0, 0, 0.75);
-    padding: 1rem;
+    padding: 2rem;
+    gap: 2rem;
 
 }
-
+#closePopup{
+    display: flex;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    border-radius: 1rem;
+    background-color: #746f6faf;
+    border: 5px black;
+    font-size: 30px;
+    color: white;
+    text-shadow: 2px 2px 3px rgba(11, 5, 3, 0.681);
+    text-decoration: none;
+    transition: 0.3s ease;
+    animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2); 
+    }
+    100% {
+      transform: scale(1);
+    }
+     }
 main{
     display: flex;
     justify-content: center;
@@ -35,6 +63,10 @@ main{
 
 body{
     overflow: hidden;
+    background-image: url(../Img/bgmur.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #crosshair {
