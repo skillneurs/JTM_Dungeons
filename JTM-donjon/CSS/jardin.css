@@ -11,7 +11,6 @@ body{
     display: inline-block;
     cursor: pointer;
     color: #d7ab74;
-    font-family: Arial;
     font-size: 16px;
     padding: 17px 9px;
     text-decoration: none;
@@ -94,7 +93,6 @@ body{
     display: inline-block;
     cursor: pointer;
     color: #b7e2d1;
-    font-family: Arial;
     font-size: 16px;
     padding: 17px 17px;
     text-decoration: none;
@@ -120,7 +118,6 @@ body{
     display: inline-block;
     cursor: pointer;
     color: #d7ab74;
-    font-family: Arial;
     font-size: 16px;
     padding: 17px 9px;
     text-decoration: none;
