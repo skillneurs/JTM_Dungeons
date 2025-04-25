@@ -9,10 +9,3 @@ start.addEventListener("click", function () {
    canvas.style.display = 'block'
 })
 
-document.addEventListener("keydown", function(event) {
-    if (event.key === "Escape") {
-        popup.style.display = "flex";
-        canvas.style.display = 'none';
-        
-    }
-});

@@ -419,10 +419,12 @@ export const createScene = function (engine, canvas) {
                     } else if (pickedMesh.name === "torchBase" || pickedMesh.name === "torchHead") {
 
                         let message = document.getElementById("message_coder");
-                        message.id = "message"
-                        setTimeout(() => {
-                            message.id = "message_coder"
-                        }, 5000);
+                        if (message) {
+                            message.classList.add("visible"); // Ajoutez une classe pour afficher le message
+                            setTimeout(() => {
+                                message.classList.remove("visible"); // Supprimez la classe après 5 secondes
+                            }, 5000);
+                        }
                     }
                 }
             }
