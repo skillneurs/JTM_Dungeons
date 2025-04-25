@@ -17,18 +17,28 @@ btncontinue.addEventListener("click", function () {
     }
 });
 const question = document.querySelector(".checkbox")
-const qst1 = document.getElementById("qst1")
-const qst2 = document.getElementById("qst2")
-const qst3 = document.getElementById("qst3")
-const qst4 = document.getElementById("qst4")
+const checkboxes = document.querySelectorAll(".checkbox input[type='checkbox']");
 const btn = document.querySelector(".boutonok")
 
 btn.addEventListener("click", function(){
-    if (qst1.value === "yes") {
-        window.location = "./game.html"
-    } else {
-       let p = document.createElement("p")
-       p.textContent = "FALSE !" 
-       main.appendChild(p)
-    }
+   let checked = false;
+   checkboxes.forEach(function(checkbox) {
+      if (checkbox.checked) {
+         if (checkbox.value === "yes") {
+            checked = true;
+            window.location.href = "game.html";
+         }else{
+            let p = document.createElement("p")
+            p.textContent = "FALSE !"
+            p.style.color = "red"
+            p.style.zIndex = "1000"
+            p.classList.toggle('false')
+            question.appendChild(p);
+            setTimeout(() => {
+               p.remove()
+            }, 10000);
+         }
+      }
+   });
+
 })
