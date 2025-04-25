@@ -24,5 +24,9 @@ const qst4 = document.getElementById("qst4")
 const btn = document.querySelector("boutonok")
 
 boutonok.addEventListener("click", function(){
-    
+    if (qst1.value === "yes") {
+        
+    } else {
+        
+    }
 })
