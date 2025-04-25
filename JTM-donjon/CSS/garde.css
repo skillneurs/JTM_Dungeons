@@ -112,3 +112,7 @@ main{
     display: flex;
     justify-content: center;
 }
+
+.displayNone{
+    display: none;
+}
