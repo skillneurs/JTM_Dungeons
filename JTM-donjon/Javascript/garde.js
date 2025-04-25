@@ -23,7 +23,7 @@ const qst3 = document.getElementById("qst3")
 const qst4 = document.getElementById("qst4")
 const btn = document.querySelector("boutonok")
 
-boutonok.addEventListener("click", function(){
+btn.addEventListener("click", function(){
     if (qst1.value === "yes") {
         window.location = "./game.html"
     } else {
