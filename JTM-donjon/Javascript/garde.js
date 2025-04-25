@@ -25,8 +25,10 @@ const btn = document.querySelector("boutonok")
 
 boutonok.addEventListener("click", function(){
     if (qst1.value === "yes") {
-        
+        window.location = "./game.html"
     } else {
-        
+       let p = document.createElement("p")
+       p.textContent = "FALSE !" 
+       main.appendChild(p)
     }
 })
