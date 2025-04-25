@@ -105,3 +105,10 @@ main{
     font-size: 6px;
     justify-content: flex-end;
 }
+
+.checkbox{
+    color: aliceblue;
+    gap: 2rem;
+    display: flex;
+    justify-content: center;
+}
