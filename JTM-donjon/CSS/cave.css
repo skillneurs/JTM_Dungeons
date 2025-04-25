@@ -38,3 +38,6 @@ main{
     padding-right: 26rem;
     padding-left: 26rem;
 }
+.displayNone{
+    display: none;
+}
