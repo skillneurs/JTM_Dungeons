@@ -41,3 +41,16 @@ main{
 .displayNone{
     display: none;
 }
+.popupEnigme{
+    margin-left: 20rem;
+    margin-right: 20rem;
+    margin-top: 18rem;
+    font-size: 36px;
+    color: red;
+    position: absolute;
+    padding-top: 2rem;
+    text-align: center;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.499);
+    border-radius: 80px;
+}
