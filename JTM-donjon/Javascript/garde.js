@@ -33,10 +33,10 @@ btn.addEventListener("click", function(){
             p.style.color = "red"
             p.style.zIndex = "1000"
             p.classList.toggle('false')
-            question.appendChild(p);
+            question.append(p);
             setTimeout(() => {
                p.remove()
-            }, 10000);
+            }, 5000);
          }
       }
    });
