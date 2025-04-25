@@ -21,4 +21,12 @@ const qst1 = document.getElementById("qst1")
 const qst2 = document.getElementById("qst2")
 const qst3 = document.getElementById("qst3")
 const qst4 = document.getElementById("qst4")
+const btn = document.querySelector("boutonok")
 
+boutonok.addEventListener("click", function(){
+    if (qst1.value === "yes") {
+        
+    } else {
+        
+    }
+})
