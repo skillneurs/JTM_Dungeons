@@ -1,25 +1,50 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Porte Animée</title>
+    <title>Couloir des Épreuves</title>
     <link rel="stylesheet" href="./CSS/couloir.css">
     <link rel="stylesheet" href="./CSS/font.css">
 </head>
+
 <body>
-    <div id="porte1" class="porte-container">
-        <div class="porte gauche"><p class="numporte">1</p></div>
-        <div class="porte droite"></div>
-    </div>
-    <div id="porte2" class="porte-container">
-        <div class="porte gauche"><p class="numporte">2</p></div>
-        <div class="porte droite"></div>
-    </div>
-    <div id="porte3" class="porte-container">
-        <div class="porte gauche"><p class="numporte">3</p></div>
-        <div class="porte droite"></div>
-    </div>
-    <script src="./location.js"></script>
+    <main>
+        <section class="treedoor">
+            <div id="porte1" class="porte-container">
+                <div class="porte gauche">
+                    <p class="numporte">1</p>
+                </div>
+                <div class="porte droite"></div>
+            </div>
+            <div id="porte2" class="porte-container">
+                <div class="porte gauche">
+                    <p class="numporte">2</p>
+                </div>
+                <div class="porte droite"></div>
+            </div>
+            <div id="porte3" class="porte-container">
+                <div class="porte gauche">
+                    <p class="numporte">3</p>
+                </div>
+                <div class="porte droite"></div>
+            </div>
+        </section>
+
+        <!-- Section pour afficher les questions -->
+        <section id="quiz" class="none">
+            <h2>Question</h2>
+            <p id="questionText"></p>
+            <div class="answers">
+                <button class="answer" data-correct="false"></button>
+                <button class="answer" data-correct="false"></button>
+                <button class="answer" data-correct="false"></button>
+                <button class="answer" data-correct="false"></button>
+            </div>
+        </section>
+    </main>
+    <script src="./Javascript/couloir.js"></script>
 </body>
+
 </html>
