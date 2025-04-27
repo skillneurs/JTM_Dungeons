@@ -25,6 +25,7 @@ let currentQuestionIndex = 0;
 document.addEventListener("DOMContentLoaded", () => {
     const quizSection = document.getElementById("quiz");
     quizSection.classList.add("none");
+
 });
 // Charger une question
 function loadQuestion(index) {
@@ -42,6 +43,11 @@ doors.forEach((door, index) => {
         currentQuestionIndex = index;
         quizSection.classList.remove("none");
         loadQuestion(index);
+        window.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                quizSection.classList.add("none");
+            }
+        });
     });
 });
 
