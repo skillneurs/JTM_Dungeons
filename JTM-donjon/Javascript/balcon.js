@@ -23,5 +23,5 @@ btescalader2.addEventListener("click", function () {
 });
 
 ok.addEventListener("click", function () {
-    window.location.href = "/game.html"; // Redirige vers la page d'accueil
+    window.location.href = "/JTM-donjon/game.html"; 
 })
