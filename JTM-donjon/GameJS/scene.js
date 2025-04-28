@@ -356,7 +356,7 @@ export const createScene = function (engine, canvas) {
                                 code.id = "codeBefore";
                                 setTimeout(() => {
                                     window.location = "couloir.html";
-                                }, 5000);
+                                }, 2000);
                             } else {
                                 let p = document.createElement("p");
                                 p.textContent = "Code incorrect !";

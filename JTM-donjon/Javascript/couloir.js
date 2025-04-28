@@ -5,8 +5,8 @@ const questions = [
         correct: 0
     },
     {
-        text: "Quel est le mot de passe pour la porte 2 ?",
-        options: ["dragon", "princesse", "chevalier", "donjon"],
+        text: "To reach the gate of freedom,it is necessary to walk __ the endless passage without hesitation",
+        options: ["across", "along", "beyond", "beside"],
         correct: 1
     },
     {
@@ -58,11 +58,11 @@ answerButtons.forEach(button => {
             alert("Bonne réponse ! La porte s'ouvre.");
             quizSection.classList.add("none");
             doors[currentQuestionIndex].classList.add("open"); // Ajoutez une classe pour animer la porte
-            setTimeout(() => {
-                if (currentQuestionIndex === 0) window.location = "balcon.html";
-                if (currentQuestionIndex === 1) window.location = "cave.html";
-                if (currentQuestionIndex === 2) window.location = "garde.html";
-            }, 1000);
+
+            if (currentQuestionIndex === 0) window.location = "balcon.html";
+            if (currentQuestionIndex === 1) window.location = "cave.html";
+            if (currentQuestionIndex === 2) window.location = "garde.html";
+
         } else {
             alert("Mauvaise réponse ! Réessayez.");
         }

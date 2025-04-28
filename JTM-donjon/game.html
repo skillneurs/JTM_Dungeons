@@ -29,26 +29,14 @@
                 n’attendait</p>
             <button id="closePopup">start</button>
         </section>
-        <section class="none" id="qst1">
-            <h2>
-                Vous arrivez dans la prison, vous devez vous échapper. <br>
-                Vous devez trouver un code pour **ouvrir** la porte. <br>
-            </h2>
-            <div class="reponse">
-                <div class="check">
-                    <input type="checkbox" value="yes" id="checkbox1"><label for="checkbox1">open</label></fieldset>
-                </div>
-                <div class="check">
-                    <input type="checkbox" value="no" id="checkbox2"><label for="checkbox2">opened</label>
-                </div>
-                <div class="check">
-                    <input type="checkbox" value="no" id="checkbox3"><label for="checkbox3">opener</label>
-                </div>
-                <div class="check">
-                    <input type="checkbox" value="no" id="checkbox4"><label for="checkbox4">opeen</label>
-                </div>
-                <div class="sub">
-                    <button type="submit" id="sub">Submit</button>
+        <section id="quiz" class="none">
+            <h2>Question</h2>
+                <p id="questionText"></p>
+                <div class="answers">
+                    <button class="answer" data-correct="false"></button>
+                    <button class="answer" data-correct="false"></button>
+                    <button class="answer" data-correct="false"></button>
+                    <button class="answer" data-correct="false"></button>
                 </div>
         </section>
         </div>
