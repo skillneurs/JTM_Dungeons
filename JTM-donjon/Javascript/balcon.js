@@ -1,7 +1,7 @@
 
 const btescalader2 = document.getElementById("btescalader2")
 const main = document.querySelector("main");
-
+const ok = document.querySelector(".boutonok");
 const question = {
     text: "Sometimes, the quickest way is the most dangerous. If you had read the signs, you _______ know not to climb",
     options: ["would", "will", "can", "sould"],
@@ -21,3 +21,7 @@ btescalader2.addEventListener("click", function () {
         
     } 
 });
+
+ok.addEventListener("click", function () {
+    window.location.href = "/game.html"; // Redirige vers la page d'accueil
+})

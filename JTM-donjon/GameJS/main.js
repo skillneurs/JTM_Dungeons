@@ -1,16 +1,19 @@
 import { createScene } from './scene.js';
 import './PointerLock.js';
 const start = document.querySelector('#closePopup');
-const section = document.querySelector('.qst1');
+const section = document.getElementById('qst1');
 const sub = document.querySelector('#sub');
 const popup = document.querySelector('.popup');
 const radio = document.querySelectorAll('.check input[type="checkbox"]');
-section.classList.add('none'); // Masque la section de question
-section.classList.remove('qst1')
+
+
+
+
 start.addEventListener("click", function () {
     section.classList.remove('none')
     section.classList.add('qst1') // Ajoute la classe qst1 à la section
-    popup.classList.add('none'); // Masque le bouton de démarrage
+    popup.classList.add('none');
+    popup.classList.remove('popup') // Masque le bouton de démarrage
     sub.addEventListener("click", function () {
         console.log("ok")
         radio.forEach(function (radio) {

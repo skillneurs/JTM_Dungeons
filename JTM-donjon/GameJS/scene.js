@@ -31,7 +31,7 @@ export const createScene = function (engine, canvas) {
     // Création du sol
     const ground = BABYLON.MeshBuilder.CreateGround("ground", { width: 10, height: 10 }, scene);
     ground.checkCollisions = true;
-    const woodTexture = new BABYLON.Texture("/JTM-donjon/Img/plancher.avif", scene);
+    const woodTexture = new BABYLON.Texture("./Img/plancher.avif", scene);
     const groundMaterial = new BABYLON.StandardMaterial("groundMaterial", scene);
     groundMaterial.diffuseTexture = woodTexture; // Appliquer la texture au matériau
     ground.material = groundMaterial; // Appliquer le matériau au sol
@@ -51,7 +51,7 @@ export const createScene = function (engine, canvas) {
     const wallMaterial = new BABYLON.StandardMaterial("wallMaterial", scene);
 
     // Charger une image de texture pour le mur
-    const stoneTexture = new BABYLON.Texture("/JTM-donjon/Img/mur.jpg", scene);
+    const stoneTexture = new BABYLON.Texture("./Img/mur.jpg", scene);
 
     // Appliquer la texture au matériau
     wallMaterial.diffuseTexture = stoneTexture;
@@ -178,7 +178,7 @@ export const createScene = function (engine, canvas) {
 
     // Appliquer un matériau aux deux moitiés
     const doorMaterial = new BABYLON.StandardMaterial("doorMaterial", scene);
-    const doorTexture = new BABYLON.Texture("/JTM-donjon/Img/porte.webp", scene); // Charger une texture pour la porte
+    const doorTexture = new BABYLON.Texture("./Img/porte.webp", scene); // Charger une texture pour la porte
     doorMaterial.diffuseTexture = doorTexture; // Appliquer la texture au matériau
     doorLeft.material = doorMaterial;
     doorRight.material = doorMaterial;
