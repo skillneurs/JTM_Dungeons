@@ -62,13 +62,13 @@ export const createScene = function (engine, canvas) {
 
     // Appliquer le matériau au mur avant
     wallFront.material = wallMaterial;
-
+    wallFront.isPickable = false; // Assurez-vous que le mur est cliquable
 
     // Ajouter une torche réaliste au mur avant
     const torchBase = BABYLON.MeshBuilder.CreateCylinder("torchBase", { diameter: 0.1, height: 1.5 }, scene); // Manche de la torche
     torchBase.position = new BABYLON.Vector3(0, wallHeight - 2, wallFront.position.z + wallThickness / 2 + 0.1); // Position sur le mur avant
     torchBase.rotation.x = Math.PI / 8; // Incliner la torche à 45 degrés sur l'axe X
-
+    torchBase.isPickable = true; // Rendre la torche cliquable
     // Ajouter la tête de la torche
     const torchHead = BABYLON.MeshBuilder.CreateCylinder("torchHead", { diameterTop: 0.2, diameterBottom: 0.3, height: 0.3 }, scene); // Tête de la torche
     torchHead.parent = torchBase; // Lier la tête au manche
@@ -82,7 +82,7 @@ export const createScene = function (engine, canvas) {
     torchLight.specular = new BABYLON.Color3(0, 0, 0); // Pas de reflets
     torchLight.intensity = 1; // Intensité initiale de la lumière
     torchLight.range = 15; // Portée de la lumière
-
+    torchLight.isPickable = true; // Rendre la lumière cliquable
     // Ajouter une animation pour simuler une lumière vacillante
     let flickerTime = 0; // Temps accumulé pour contrôler la fréquence du clignotement
     scene.registerBeforeRender(() => {
@@ -124,6 +124,7 @@ export const createScene = function (engine, canvas) {
 
     // Démarrer le système de particules
     flame.start();
+    flame.isPickable = false;
 
     // Mur arrière
     const wallBack = BABYLON.MeshBuilder.CreateBox("wallBack", { width: groundWidth, height: wallHeight, depth: wallThickness }, scene);
@@ -211,7 +212,9 @@ export const createScene = function (engine, canvas) {
 
     wallBackWithWindowMesh.material = wallMaterial;
 
-
+    torchBase.renderingGroupId = 1;
+    torchHead.renderingGroupId = 1;
+    wallFront.renderingGroupId = 0; // Le mur a une priorité plus basse
 
     // Activer les collisions pour les murs
     wallFront.checkCollisions = true;
@@ -339,7 +342,7 @@ export const createScene = function (engine, canvas) {
             if (document.pointerLockElement === canvas) {
                 if (pointerInfo.pickInfo.hit) {
                     const pickedMesh = pointerInfo.pickInfo.pickedMesh;
-
+                    console.log(pickedMesh.name); // Débogage : afficher le nom de l'objet cliqué
                     // Vérifiez si l'objet cliqué est une porte
                     if (pickedMesh.name === "doorLeft" || pickedMesh.name === "doorRight") {
                         let code = document.getElementById("codeBefore");
@@ -417,20 +420,21 @@ export const createScene = function (engine, canvas) {
                             }
                         });
                     } else if (pickedMesh.name === "torchBase" || pickedMesh.name === "torchHead") {
-
-                        let message = document.getElementById("message_coder");
-                        if (message) {
-                            message.classList.add("visible"); // Ajoutez une classe pour afficher le message
-                            setTimeout(() => {
-                                message.classList.remove("visible"); // Supprimez la classe après 5 secondes
-                            }, 5000);
-                        }
+                                let message = document.getElementById("message_coder");
+                                if (message) {
+                                    message.classList.add("visible"); // Ajoutez une classe pour afficher le message
+                                    setTimeout(() => {
+                                        message.classList.remove("visible"); // Supprimez la classe après 5 secondes
+                                    }, 5000);
+                                }
+                            
+                        
                     }
                 }
             }
         }
     });
-    
+
     // Gérer le clic de la souris pour verrouiller le pointeur
     return scene;
 }

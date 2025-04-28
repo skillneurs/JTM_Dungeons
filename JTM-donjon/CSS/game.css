@@ -3,7 +3,7 @@
     padding: 0;
 }
 
-#popup {
+.popup {
     display: flex;
     background-color: #ffffff91;
     flex-direction: column;
@@ -19,13 +19,13 @@
     font-size: 20px;
 
 }
-#popup h2 {
+.popup h2 {
     font-size: 2rem;
     color: #ffffff;
     text-shadow: 2px 2px 3px rgba(11, 5, 3, 0.681);
 }
 
-#popup p {
+.popup p {
     font-size: 1.5rem;
     color: black;
     text-shadow: 2px 2px 3px rgba(11, 5, 3, 0.681);
@@ -71,15 +71,10 @@ main {
 }
 
 .none {
-    display: none;
+    display: none !important;
 }
 
-#renderCanvas {
-    height: 100vh;
-    width: 100vw;
-    display: none;
 
-}
 
 body {
     overflow: hidden;
@@ -163,4 +158,35 @@ body {
 
 #fpsCounter {
     font-family: sans-serif;
+}
+
+.qst1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 2rem;
+    text-shadow: 2px 2px 3px rgba(11, 5, 3, 0.681);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 52px;
+    border-radius: 25px;
+    background-color: #746f6faf;
+    
+}
+
+.check{
+    display: flex;
+    justify-content: start;
+    font-size: 2rem;
+    color: white;
+    text-shadow: 2px 2px 3px rgba(11, 5, 3, 0.681);
+    
+    
+
+}
+.check input{
+    margin-right: 10px;
 }
