@@ -10,6 +10,6 @@ btnMarcher.addEventListener("click", function () {
 
 });
 btncourir.addEventListener("click", function () {
-    window.location = "jardin.html";
+    window.location = "./jardin.html";
 
 });
