@@ -9,3 +9,7 @@ btnMarcher.addEventListener("click", function () {
     btnmarcher.classList.add("displayNone");
 
 });
+btncourir.addEventListener("click", function () {
+    window.location = "jardin.html";
+
+});
